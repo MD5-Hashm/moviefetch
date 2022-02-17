@@ -20,7 +20,7 @@ For now I would recommend using these programs to play the movies.
 
 ## Setup
 1. Download a prebuilt binary or build from source. 
-1. Create a config.toml with your settings (see config.toml.example) you can get an api key from [tmdb](https://www.themoviedb.org/) or just use mine as its not rate limited.
+1. Create a config.toml with your settings (see config.toml.example included in download) you can get an api key from [tmdb](https://www.themoviedb.org/) or just use mine as its not rate limited.
 1. Run the binary!
 
 ### To do
@@ -35,15 +35,15 @@ My [Trello Board](https://trello.com/b/LUevlQih/moviefetch) (Updated more freque
 ### External Packages:
 Big thanks to:
 
-[clearscreen | GeistInDerSH](github.com/GeistInDerSH/clearscreen)
+[clearscreen | GeistInDerSH](https://www.github.com/GeistInDerSH/clearscreen)
 
-[govalidator | asaskevich](github.com/asaskevich/govalidator)
+[govalidator | asaskevich](https://www.github.com/asaskevich/govalidator)
 
-[rain        | cenkalti](github.com/cenkalti/rain)
+[rain        | cenkalti](https://www.github.com/cenkalti/rain)
 
-[color       | fatih](github.com/fatih/color)
+[color       | fatih](https://www.github.com/fatih/color)
 
-[go-toml     | pelletier](github.com/pelletier/go-toml)
+[go-toml     | pelletier](https://www.github.com/pelletier/go-toml)
 
 ### License
 [MIT](https://github.com/MD5-Hashm/moviefetch/blob/main/LICENCE)
