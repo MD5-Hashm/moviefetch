@@ -5,7 +5,7 @@
 - This program is in a pre-release stage so expect bugs and other issues...
 
 ## Intro
-Movie fetch is a project of mine written in go to search for and then fetch movies from torrent sites.
+Movie fetch is a project of mine written in go to search for and then fetch movies from torrent sites. When you search for movies it will find the year of the movie and search for the prefereed quality (specified in the config file) and result in very accurate searches.
 
 ## Stability / Testing
 This program has tested with:
