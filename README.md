@@ -27,6 +27,7 @@ For now I would recommend using these programs to play the movies.
 - [  ] Tv Show support
 - [  ] Edit Searches
 - [  ] Add more torrent sites
+
 My [Trello Board](https://trello.com/b/LUevlQih/moviefetch) (Updated more frequently + more stuff)
 
 ### External Packages:
@@ -43,4 +44,4 @@ Big thanks to:
 [go-toml     | pelletier](github.com/pelletier/go-toml)
 
 ### License
-[MIT](https://github.com/MD5-Hashm/moviefetch/blob/main/LICENSE)
+[MIT](https://github.com/MD5-Hashm/moviefetch/blob/main/LICENCE)
