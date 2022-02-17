@@ -16,7 +16,7 @@ For now I would recommend using these programs to play the movies.
 
 ## Prequisites
 - Go (To build from source)
-- One of the following media players ['vlc'](https://www.videolan.org/vlc/), ['mpv'](https://mpv.io/), or ['quicktime'](https://support.apple.com/downloads/quicktime) (MacOS version of Quicktime is the only one supported)
+- One of the following media players '[vlc](https://www.videolan.org/vlc/)', '[mpv](https://mpv.io/)', or '[quicktime](https://support.apple.com/downloads/quicktime)' (MacOS version of Quicktime is the only one supported)
 
 ## Setup
 1. Download a prebuilt binary or build from source. 
