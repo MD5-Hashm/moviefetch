@@ -27,6 +27,8 @@ For now I would recommend using these programs to play the movies.
 - [  ] Tv Show support
 - [  ] Edit Searches
 - [  ] Add more torrent sites
+- [  ] Add more media players
+- [  ] Add a gui (Long term)
 
 My [Trello Board](https://trello.com/b/LUevlQih/moviefetch) (Updated more frequently + more stuff)
 
