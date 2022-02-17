@@ -32,9 +32,13 @@ My [Trello Board](https://trello.com/b/LUevlQih/moviefetch) (Updated more freque
 ### External Packages:
 Big thanks to:
 [clearscreen | GeistInDerSH](github.com/GeistInDerSH/clearscreen)
+
 [govalidator | asaskevich](github.com/asaskevich/govalidator)
+
 [rain        | cenkalti](github.com/cenkalti/rain)
+
 [color       | fatih](github.com/fatih/color)
+
 [go-toml     | pelletier](github.com/pelletier/go-toml)
 
 ### License
