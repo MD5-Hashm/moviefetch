@@ -11,6 +11,7 @@ Movie fetch is a project of mine written in go to search for and then fetch movi
 This program has tested with:
 - VLC on WINDOWS
 - QUICKTIME on MACOS
+
 There is no garentee that other combinations will work but im hoping to test more soon.
 For now I would recommend using these programs to play the movies.
 
