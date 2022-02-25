@@ -22,7 +22,7 @@ For now I would recommend using these programs to play the movies.
 ## Setup
 1. Download a prebuilt binary or build from source. 
 1. Create a config.toml with your settings (see config.toml.example included in download) you can get an api key from [tmdb](https://www.themoviedb.org/) or just use mine as its not rate limited.
-1. Run the binary!
+1. Run the binary! (or run the binary with your movie name as an argument (I have not released this feature yet in the precompiled bins but you can build from source for this))
 
 ### To do
 - [  ] Tv Show support

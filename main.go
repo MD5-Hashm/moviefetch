@@ -123,39 +123,51 @@ func editprefs() int {
 }
 
 func main() {
-	if len(os.Args) >= 2 {
-		if strings.Contains(os.Args[1], "info") {
-			info()
+	var prequery string = ""
+	var query string
+	if len(os.Args) >= 2 && strings.Contains(os.Args[1], "--info") {
+		info()
+	} else if len(os.Args) >= 2 && !strings.Contains(os.Args[1], "--") {
+		for index, arg := range os.Args[1:] {
+			if index != len(os.Args)-1 {
+				prequery += " " + arg
+			} else {
+				prequery += arg
+			}
 		}
 	}
 	if _, err := os.Stat("config.toml"); os.IsNotExist(err) {
 		r.Printf("'config.toml' not found! Please create one (examples @ github)")
 	}
-	if startscreen {
-		s := input.Get("enter/c: Continue\ne: Edit config\nex: Exit\n:")
-		if strings.ToLower(s) == "c" || s == "" {
-		} else if strings.ToLower(s) == "e" {
-			_ = editprefs()
+	if prequery == "" {
+		if startscreen {
+			s := input.Get("enter/c: Continue\ne: Edit config\nex: Exit\n:")
+			if strings.ToLower(s) == "c" || s == "" {
+			} else if strings.ToLower(s) == "e" {
+				_ = editprefs()
 
-			quality, _ = config.Get("bitsearch.quality").(string)
-			sort, _ = config.Get("bitsearch.sort").(string)
-			apiKey, _ = config.Get("api.key").(string)
-			searchlimit, _ = config.Get("moviesearch.searchlimit").(int64)
-			mediaplayer, _ = config.Get("player.player").(string)
-			lowseed, _ = config.Get("torrent.lowval").(int64)
-			g.Println("Loaded changes")
-			time.Sleep(time.Second)
-		} else if strings.ToLower(s) == "ex" {
-			os.Exit(0)
-		} else {
-			fmt.Println("Unrecognized command... continuing")
-			time.Sleep(time.Second * 2)
+				quality, _ = config.Get("bitsearch.quality").(string)
+				sort, _ = config.Get("bitsearch.sort").(string)
+				apiKey, _ = config.Get("api.key").(string)
+				searchlimit, _ = config.Get("moviesearch.searchlimit").(int64)
+				mediaplayer, _ = config.Get("player.player").(string)
+				lowseed, _ = config.Get("torrent.lowval").(int64)
+				g.Println("Loaded changes")
+				time.Sleep(time.Second)
+			} else if strings.ToLower(s) == "ex" {
+				os.Exit(0)
+			} else {
+				fmt.Println("Unrecognized command... continuing")
+				time.Sleep(time.Second * 2)
+			}
 		}
+		c.ClearScreen()
+		color.Cyan("MovieFetch / MD5-Hashm <3")
+		fmt.Println("-------------------------")
+		query = input.Get("Movie Title: ")
+	} else {
+		query = prequery
 	}
-	c.ClearScreen()
-	color.Cyan("MovieFetch / MD5-Hashm <3")
-	fmt.Println("-------------------------")
-	query := input.Get("Movie Title: ")
 	c.ClearScreen()
 	for num, movie := range fetch.FetchMovies(query, apiKey, searchlimit) {
 		fmt.Printf(strings.Split(movie, ";")[0])
