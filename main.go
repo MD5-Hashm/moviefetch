@@ -221,7 +221,7 @@ func main() {
 			break
 		}
 		fmt.Printf("Status: %s\nTotal: %s\nDownloaded: %s\nPeers: %s\n", base[0], base[3], base[1], base[2])
-		fmt.Println(<-tout)
+		//fmt.Println(<-tout)
 	}
 	input.Get("Press enter to exit...")
 }
