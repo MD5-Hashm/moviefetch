@@ -70,5 +70,7 @@ func Watch(player string, file string) {
 		MacWatchFile(file)
 	} else if player == "bundled" || player == "bundled-vlc" {
 		BundledVlcWatchFile(file)
+	} else if player == "win" || player == "windef" || player == "windefault" {
+		WinDef(file)
 	}
 }

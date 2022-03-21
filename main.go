@@ -32,6 +32,7 @@ var (
 	mediaplayer = config.Get("player.player").(string)
 	lowseed     = config.Get("torrent.lowval").(int64)
 	startscreen = config.Get("start.showscreen").(bool)
+	bytestl     = config.Get("player.btl").(int64)
 	g           = color.New(color.FgGreen)
 	r           = color.New(color.FgRed)
 )
@@ -193,7 +194,7 @@ func main() {
 		fmt.Println("s: search")
 		sselection := input.Get(": ")
 		c.ClearScreen()
-		if strings.ToLower(sselection) == "s" {
+		if strings.ToLower(sselection) == "s" || strings.ToLower(sselection) == "" {
 			searchfortorrent(movie, "")
 		}
 	}
@@ -211,7 +212,7 @@ func main() {
 		base := strings.Split(strings.Replace(strings.Replace(fmt.Sprintf("%v", <-tout), "{", "", -1), "}", "", -1), " ")
 		if !pl {
 			dlsize, _ := strconv.Atoi(strings.Split(fmt.Sprintf("%v", <-tout), " ")[1])
-			if dlsize > 405000000 && isMovie {
+			if dlsize > int(bytestl) && isMovie {
 				player.Launch(mediaplayer)
 				pl = true
 			}
