@@ -1,13 +1,14 @@
 [bitsearch]
     sort = "seeders" # Sort torrent results (Highly recommended)
-    quality = "1080p" # Torrent quality to search for... manually searches circumvents this
+    quality = "1080p" # Torrent quality to search for... manual searches circumvents this
 [player]
-    player = "vlc" # Media player ["vlc", "mpv", "mac"/"quicktime"/"qt"]
+    player = "vlc" # Media player ["vlc", "mpv", "mac"/"quicktime"/"qt", "win"/"windef"/"windefault"] 
+    blt = 450000000 # When will vlc launch (bytes downloaded) highly recommended to keep @ 300000000 - 400000000
 [moviesearch]
-    searchlimit = 8 # Results shown for moviesearches
+    searchlimit = 8 # Results shown for moviesearches (Not to be confused with torrent searches)
 [api]
-    key = "c3a88c46f124e3e831a3b0f50f4f1bf8" # Api key
+    key = "c3a88c46f124e3e831a3b0f50f4f1bf8" # Api key (the movie db)
 [torrent]
-    lowval = 65 # Recommended to keep @ 65 (Visual guide)
+    lowval = 65 # What seeder value is considered "low" (Visual guide) recommended to keep @ 65 || >65
 [start]
-    showscreen = false # Show the start screen
+    showscreen = false # Show the start screen which has options such as updating the config (kinda useless tbh)    
