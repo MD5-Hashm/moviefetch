@@ -61,7 +61,7 @@ func getmovieinput(text string, limit int) int {
 		if strings.ToLower(inp) == "s" {
 			return -8
 		}
-		if valid.IsInt(inp) {
+		if valid.IsInt(inp) && len(inp) < 9 {
 			iselection, _ := strconv.Atoi(inp)
 			if iselection > limit {
 				fmt.Println("Out of range :(")
@@ -138,7 +138,7 @@ func main() {
 		}
 	}
 	if _, err := os.Stat("config.toml"); os.IsNotExist(err) {
-		r.Printf("'config.toml' not found! Please create one (examples @ github)")
+		r.Printf("'config.toml' not found! Please create one (examples @ github) or ensure that the name of the config file is correct")
 	}
 	if prequery == "" {
 		if startscreen {
