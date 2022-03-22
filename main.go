@@ -191,16 +191,18 @@ func main() {
 		fmt.Println(strings.Replace(pmovie, ";", "", -1))
 		movie := strings.Split(pmovie, ";")[0]
 		fmt.Println()
-		fmt.Println("s: search")
-		sselection := input.Get(": ")
+		fmt.Println("enter: search")
+		//sselection := input.Get(": ")
+		input.Get(": ")
 		c.ClearScreen()
-		if strings.ToLower(sselection) == "s" || strings.ToLower(sselection) == "" {
-			searchfortorrent(movie, "")
-		}
+		/*if strings.ToLower(sselection) == "s" || strings.ToLower(sselection) == "" {
+			searchfortorrent(strings.Replace(movie,":","",-1), "")
+		}*/
+		searchfortorrent(strings.Replace(movie, ":", "", -1), "")
 	}
 	torrentselection, terr := input.GetInt(": ", len(torrents))
 	if terr != 0 {
-		panic("Int was not passed")
+		panic("Int was not passed and an unknown error occored")
 	}
 	c.ClearScreen()
 	torrentf := torrents[torrentselection]

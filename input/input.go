@@ -26,14 +26,14 @@ func GetInt(inputtext string, limit int) (int, int) {
 			fmt.Printf(inputtext)
 			scanner.Scan()
 			var str string = scanner.Text()
-			if valid.IsInt(str) {
+			if valid.IsInt(str) && len(str) < 9 {
 				out, err := strconv.Atoi(str)
 				if err != nil {
 					panic(err)
 				}
 				return out, 0
 			} else {
-				fmt.Println("Not a int :(")
+				fmt.Println("Not a valid int :(")
 			}
 		}
 	} else {
@@ -41,7 +41,7 @@ func GetInt(inputtext string, limit int) (int, int) {
 			fmt.Printf(inputtext)
 			scanner.Scan()
 			var str string = scanner.Text()
-			if valid.IsInt(str) {
+			if valid.IsInt(str) && len(str) < 9 {
 				out, err := strconv.Atoi(str)
 				if err != nil {
 					panic(err)
@@ -52,7 +52,7 @@ func GetInt(inputtext string, limit int) (int, int) {
 					return out, 0
 				}
 			} else {
-				fmt.Println("Not an int :(")
+				fmt.Println("Not an valid int :(")
 			}
 		}
 	}

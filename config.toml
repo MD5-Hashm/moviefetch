@@ -3,7 +3,7 @@
     quality = "1080p" # Torrent quality to search for... manual searches circumvents this
 [player]
     player = "vlc" # Media player ["vlc", "mpv", "mac"/"quicktime"/"qt", "win"/"windef"/"windefault"] 
-    blt = 450000000 # When will vlc launch (bytes downloaded) highly recommended to keep @ 300000000 - 400000000
+    btl = 450000000 # When will vlc launch (bytes downloaded) highly recommended to keep @ 300000000 - 400000000
 [moviesearch]
     searchlimit = 8 # Results shown for moviesearches (Not to be confused with torrent searches)
 [api]
