@@ -68,6 +68,8 @@ func getmovieinput(text string, limit int) int {
 			} else {
 				return iselection
 			}
+		} else if inp == "" {
+			return -8
 		} else {
 			fmt.Println("Not an int :(")
 		}
@@ -209,12 +211,12 @@ func main() {
 	tout := make(chan torrent.Stat)
 	go torrent.AddTorrent(torrentf, tout)
 	pl := false
+	isMovie := true
 	for {
-		isMovie := true
-		base := strings.Split(strings.Replace(strings.Replace(fmt.Sprintf("%v", <-tout), "{", "", -1), "}", "", -1), " ")
+		torOut := (<-tout)
 		if !pl {
-			dlsize, _ := strconv.Atoi(strings.Split(fmt.Sprintf("%v", <-tout), " ")[1])
-			if dlsize > int(bytestl) && isMovie {
+			dlsize := torOut.Downloaded
+			if dlsize > bytestl && isMovie {
 				player.Launch(mediaplayer)
 				pl = true
 			}
@@ -223,7 +225,7 @@ func main() {
 			g.Println("Finished!")
 			break
 		}
-		fmt.Printf("Status: %s\nTotal: %s\nDownloaded: %s\nPeers: %s\n", base[0], base[3], base[1], base[2])
+		fmt.Printf("Status: %v\nTotal Size: %v\nDownloaded: %v\nPeers: %v\n", torOut.Status, torOut.Total, torOut.Downloaded, torOut.Peers)
 		//fmt.Println(<-tout)
 	}
 	input.Get("Press enter to exit...")
